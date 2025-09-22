@@ -1,0 +1,114 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  .header__child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    padding: 12px 0;
+    //
+    .header--logo {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      a img {
+        max-width: 160px;
+        height: auto;
+      }
+      .menu--bar {
+        display: none;
+        @include container-xl() {
+          display: block;
+        }
+        svg {
+          width: 24px;
+          height: 24px;
+          stroke: white;
+        }
+      }
+    }
+    .header--menu {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+      @include container-xl() {
+        display: none;
+      }
+      &__item {
+        &:not(:first-child) a {
+          padding: 20px 0;
+        }
+        &:not(:first-child) a::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+        &:first-child a {
+          padding: 14px 0 20px;
+        }
+        a {
+          position: relative;
+          display: inline-block;
+          font-size: 1.4rem;
+          white-space: nowrap;
+          font-weight: 500;
+          color: white;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transition: all 0.2s linear;
+          }
+          &:hover {
+            &::after {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+          }
+        }
+      }
+    }
+    .header--control {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+
+      //   padding-top: 12px;
+      .control--languge {
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+        span {
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          color: white;
+        }
+        svg {
+          width: 12px;
+          height: 12px;
+          fill: white;
+        }
+      }
+      .control--search {
+        cursor: pointer;
+        svg {
+          width: 16px;
+          height: 16px;
+          stroke: white;
+        }
+      }
+    }
+  }
+}

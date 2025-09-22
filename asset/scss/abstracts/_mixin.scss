@@ -1,0 +1,55 @@
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// clipText
+@mixin clipText($lineText) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lineText;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin polygon {
+  clip-path: polygon(50% 0%, 100% 24%, 100% 76%, 50% 100%, 0% 76%, 0 24%);
+}
+
+// responsive
+@mixin container-xxl() {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin container-xl() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin container-lg() {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin container-md() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin container-sm() {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin container() {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}

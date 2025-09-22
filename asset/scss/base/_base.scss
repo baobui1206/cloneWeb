@@ -1,0 +1,12 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: 1.6rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
