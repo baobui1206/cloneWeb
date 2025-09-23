@@ -1,5 +1,11 @@
 html {
   font-size: 62.5%;
+  @include container-md() {
+    font-size: 56.25%;
+  }
+  // @include container-sm() {
+  //   font-size: 50%;
+  // }
 }
 
 body {
@@ -10,3 +16,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+//  /* 9px, làm tất cả chữ rem nhỏ hơn */
+//     font-size: 50%; /* 8px, cho điện thoại dọc */

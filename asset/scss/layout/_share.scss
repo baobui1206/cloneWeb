@@ -10,11 +10,14 @@
 .container-fluid {
   max-width: 100%;
 }
-.container-lg {
+.container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 16px;
+  @include container-xxl() {
+    max-width: 1140px;
+  }
   @include container-xl() {
     max-width: 960px;
   }
@@ -136,7 +139,7 @@
   align-items: center;
   column-gap: 8px;
   span {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
   }
@@ -166,15 +169,15 @@
 .title--font28 {
   font-size: 2.8rem;
   font-weight: 600;
-  @include container-md() {
-    font-size: 2.4rem;
-  }
+  // @include container-md() {
+  //   font-size: 2.4rem;
+  // }
 }
 
-.side-toolbar {
+.side--toolbar {
   position: fixed;
   right: 20px;
-  bottom: 60px;
+  bottom: 30px;
   z-index: 99999;
   &__item {
     &.gray {
@@ -202,230 +205,6 @@
       width: 20px;
       height: 20px;
       stroke: white;
-    }
-  }
-}
-// banner
-.banner {
-  .block--banner {
-    position: relative;
-    .list--banner {
-      position: relative;
-      overflow: hidden;
-      height: 620px;
-      @include container-md() {
-        height: 580px;
-      }
-      clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
-
-      &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
-        background: white;
-        z-index: 2;
-      }
-      &__item {
-        position: absolute;
-        inset: 0;
-        transition: all 0.3s linear;
-        .banner--img {
-          position: relative;
-          height: 100%;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-          &::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            // z-index: 10000;
-          }
-          // .banner--img__img {
-          //   position: absolute;
-          //   left: 50%;
-          //   top: 50%;
-          //   transform: translate(-50%, -50%);
-          //   width: 100%;
-          //   height: 100%;
-          //   object-fit: cover;
-          //   transition: all 0.2s linear;
-          // }
-        }
-
-        // content banner
-        .container--banner.custom--containerContentBanner {
-          top: 220px;
-        }
-        .content--banner {
-          position: absolute;
-          color: white;
-          width: 60%;
-          padding-left: 55px;
-          @include container-md() {
-            padding-left: 0;
-          }
-          &__top {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: 600;
-          }
-          &__title {
-            margin-top: 12px;
-          }
-          &__content {
-            margin-top: 12px;
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 1.4;
-            @include clipText(3);
-          }
-          &__seemore {
-            --size-icon: 12px;
-            --gap-icon: 10px;
-            display: flex;
-            align-items: center;
-            column-gap: 8px;
-            padding: 10px 16px;
-            margin-top: 16px;
-            background: rgba(128, 22, 24, 1);
-            color: white;
-            border: 1.5px solid transparent;
-            font-size: 1rem;
-            text-transform: uppercase;
-            font-weight: 500;
-            background: linear-gradient(
-                  rgba(128, 22, 24, 1),
-                  rgba(128, 22, 24, 1)
-                )
-                padding-box,
-              linear-gradient(
-                  45deg,
-                  rgba(159, 161, 163, 1),
-                  rgba(255, 255, 255, 1),
-                  rgba(203, 204, 205, 1)
-                )
-                border-box;
-            cursor: pointer;
-            transition: all 0.2s linear;
-            &:hover .box--icon .slide--icon {
-              transform: translateX(calc(var(--size-icon) + var(--gap-icon)));
-            }
-            &:hover {
-              background: linear-gradient(black, black) padding-box,
-                linear-gradient(
-                    45deg,
-                    rgba(159, 161, 163, 1),
-                    rgba(255, 255, 255, 1),
-                    rgba(203, 204, 205, 1)
-                  )
-                  border-box;
-            }
-            .box--icon {
-              position: relative;
-              width: var(--size-icon);
-              height: var(--size-icon);
-              overflow: hidden;
-              .slide--icon {
-                position: absolute;
-                right: 0;
-                display: flex;
-                column-gap: var(--gap-icon);
-                transition: all 0.2s linear;
-                svg {
-                  width: var(--size-icon);
-                  height: var(--size-icon);
-                  stroke: white;
-                  stroke-width: 2px;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // bg top banner
-
-      // container banner
-    }
-    .bg--bannerTop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 212px;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0)
-      );
-      z-index: 2;
-    }
-    //   list--control
-    .container--banner.custom--containerListControl {
-      bottom: 80px;
-    }
-    .list--control {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      align-items: end;
-      column-gap: 20px;
-      padding: 0 55px;
-      @include container-md() {
-        padding: 0;
-      }
-      &__item {
-        height: max-content;
-        padding: 12px 0;
-        border-bottom: 2px solid rgba(235, 35, 41, 1);
-        font-size: 1.4rem;
-        color: white;
-        cursor: pointer;
-        @include container-md() {
-          padding: 8px 0;
-        }
-        @include container-md() {
-          span {
-            display: none;
-          }
-        }
-      }
-    }
-    .container--banner.custom--containerPrevNext {
-      // position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateY(-50%, -50%);
-
-      @include container-md() {
-        display: none;
-      }
-    }
-    .control--banner {
-      display: flex;
-      justify-content: space-between;
-      .block--btn__next,
-      .block--btn__prev {
-        display: inline-block;
-        // position: absolute;
-        // top: 50%;
-        // transform: translateY(-50%);
-      }
-      .btn--next,
-      .btn--right {
-        transform: rotate(45deg);
-      }
-      .block--btn__next {
-        left: -32px;
-      }
-      .block--btn__prev {
-        right: -32px;
-      }
     }
   }
 }

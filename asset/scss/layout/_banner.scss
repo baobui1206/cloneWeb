@@ -1,0 +1,248 @@
+// banner
+.banner {
+  .block--banner {
+    position: relative;
+    .list--banner {
+      position: relative;
+      overflow: hidden;
+      @include aspect-ratio-pseudo(before, 56.25%) {
+        @include container-md() {
+          padding-top: 100%;
+        }
+      }
+
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+        background: white;
+        z-index: 2;
+      }
+      &__item {
+        position: absolute;
+        inset: 0;
+        transition: all 0.4s linear;
+        .banner--img {
+          position: relative;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          // &::before {
+          //   content: "";
+          //   position: absolute;
+          //   display: block;
+          //   padding-top: 56.25%;
+          // }
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            // z-index: 10000;
+          }
+          // .banner--img__img {
+          //   position: absolute;
+          //   left: 50%;
+          //   top: 50%;
+          //   transform: translate(-50%, -50%);
+          //   width: 100%;
+          //   height: 100%;
+          //   object-fit: cover;
+          //   transition: all 0.2s linear;
+          // }
+        }
+
+        // content banner
+        .container--banner.custom--containerContentBanner {
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .content--banner {
+          // position: absolute;
+          color: white;
+          width: 60%;
+          @include container-lg() {
+            width: 100%;
+          }
+
+          &__top {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+          }
+          &__title {
+            margin-top: 12px;
+          }
+          &__content {
+            margin-top: 12px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.4;
+            @include clipText(3);
+          }
+          &__seemore {
+            --size-icon: 12px;
+            --gap-icon: 10px;
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            padding: 10px 16px;
+            margin-top: 16px;
+            background: rgba(128, 22, 24, 1);
+            color: white;
+            border: 1.5px solid transparent;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            background: linear-gradient(
+                  rgba(128, 22, 24, 1),
+                  rgba(128, 22, 24, 1)
+                )
+                padding-box,
+              linear-gradient(
+                  45deg,
+                  rgba(159, 161, 163, 1),
+                  rgba(255, 255, 255, 1),
+                  rgba(203, 204, 205, 1)
+                )
+                border-box;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            &:hover .box--icon .slide--icon {
+              transform: translateX(calc(var(--size-icon) + var(--gap-icon)));
+            }
+            &:hover {
+              background: linear-gradient(black, black) padding-box,
+                linear-gradient(
+                    45deg,
+                    rgba(159, 161, 163, 1),
+                    rgba(255, 255, 255, 1),
+                    rgba(203, 204, 205, 1)
+                  )
+                  border-box;
+            }
+            .box--icon {
+              position: relative;
+              width: var(--size-icon);
+              height: var(--size-icon);
+              overflow: hidden;
+              .slide--icon {
+                position: absolute;
+                right: 0;
+                display: flex;
+                column-gap: var(--gap-icon);
+                transition: all 0.2s linear;
+                svg {
+                  width: var(--size-icon);
+                  height: var(--size-icon);
+                  stroke: white;
+                  stroke-width: 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // bg top banner
+
+      // container banner
+    }
+    // .bg--bannerTop {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 212px;
+
+    //   z-index: 2;
+    // }
+    //   list--control
+    .container--banner.custom--containerListControl {
+      bottom: 80px;
+      @include container-lg() {
+        bottom: 40px;
+      }
+    }
+    .list--control {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: end;
+      column-gap: 16px;
+
+      @include container-lg() {
+        grid-template-columns: repeat(4, 24px);
+        justify-content: center;
+      }
+      &__item {
+        position: relative;
+        height: max-content;
+        display: block;
+        padding: 12px 0;
+        font-size: 1.4rem;
+        color: white;
+        @include container-lg() {
+          padding: 0;
+          font-size: 0;
+        }
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: hsla(0, 0%, 100%, 0.2);
+          border-radius: 9px;
+        }
+        &.active::after {
+          background: rgba(235, 35, 41, 1);
+        }
+        @include container-lg() {
+          padding: 2px 0;
+        }
+
+        .active {
+          border-color: rgba(235, 35, 41, 1);
+        }
+      }
+    }
+    .container--banner.custom--containerPrevNext {
+      // position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%, -50%);
+      @include container-xl() {
+        display: none;
+      }
+    }
+    .control--banner {
+      display: flex;
+      justify-content: space-between;
+      .block--btn__next,
+      .block--btn__prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .btn--next,
+      .btn--right {
+        transform: rotate(45deg);
+      }
+      .block--btn__next {
+        right: calc(100% + 4px);
+      }
+      .block--btn__prev {
+        left: calc(100% + 4px);
+      }
+    }
+  }
+}

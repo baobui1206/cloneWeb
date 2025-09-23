@@ -3,52 +3,54 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 24px;
   align-items: center;
-  margin-top: -74px;
-  @include container-xl() {
-    margin-top: -52px;
-  }
+
   @include container-md() {
     grid-template-columns: 1fr;
   }
   .introduce__img {
-    // position: relative;
+    position: relative;
     // bottom: 92px;
-    // z-index: -1;
+    z-index: -1;
     @include container-md() {
-      height: 410px;
+      &::after {
+        content: "";
+        display: block;
+        padding-top: 56.25%;
+      }
     }
+    margin-top: -74px;
+    @include container-xl() {
+      margin-top: -65px;
+    }
+
     img {
+      @include container-md() {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
   .info {
-    max-width: 450px;
+    max-width: 500px;
     @include container-md() {
       max-width: 100%;
       text-align: center;
       padding: 16px 20px;
     }
-    .title {
-      font-size: 2.8rem;
-      color: rgba(128, 22, 24, 1);
-      line-height: 1.2;
-      @include container-lg() {
-        font-size: 2.4rem;
-        margin-top: 55px;
-      }
-      @include container-md() {
-        margin-top: 0;
-      }
-
-      .title__boldContent {
-        font-weight: 700;
+    .slogan {
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
     .content {
       margin-top: 40px;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       line-height: 1.4;
       @include clipText(5);
       @include container-md() {
@@ -78,6 +80,12 @@
     @include container-lg() {
       grid-template-columns: repeat(2, minmax(0px, 1fr));
       &__items:nth-last-child(-n + 2) {
+        display: none;
+      }
+    }
+    @include container-md() {
+      grid-template-columns: 1fr;
+      &__items:nth-last-child(-n + 5) {
         display: none;
       }
     }
@@ -138,14 +146,13 @@
         // height: 70%;
         // bottom: 0;
         // width: 100%;
-
         span {
           position: absolute;
           bottom: 0%;
           display: block;
           width: 100%;
           text-align: center;
-          font-size: 1.4rem;
+          font-size: 1.6rem;
           text-transform: uppercase;
           font-weight: 600;
           line-height: 1.36;
@@ -153,6 +160,9 @@
           color: white;
           // transform: translateX(-50%);
           transition: all 0.2s ease-in;
+          @include container-lg() {
+            bottom: unset;
+          }
         }
         // will-change: ;
       }
@@ -170,13 +180,16 @@
         // width: 100%;
         // padding: 0 24px;
         transition: all 0.2s ease-in;
+        @include container-lg() {
+          opacity: 1;
+          visibility: visible;
+        }
         .content {
-          font-size: 13px;
+          font-size: 14px;
           color: white;
           text-align: center;
           line-height: 1.36;
           height: calc(1em * 1.36 * 3);
-
           @include clipText(3);
           @include container-md() {
             @include clipText(2);
@@ -272,54 +285,33 @@
 
 .office--location {
   margin-top: 40px;
-  .slide--officeLocation {
-    --heightPolygonItem: 102px;
-    @include container-md() {
-      width: 100%;
-      mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 10% 90%,
-        transparent
-      );
-      overflow: hidden;
-      height: var(--heightPolygonItem);
-      margin-top: 24px;
-    }
-    &:hover .block--polygon .block--polygon__item {
-      animation-play-state: paused;
-    }
-  }
+
   .block--polygon {
-    --width: 310px;
-    --quantity: 6;
-
-    --heightPolygon: 410px;
-    $widthPolygon: 40px;
+    --widthPolygon: 300px;
+    --widthPolygonItem: 102px;
     //
-    --positionPolygonItem: 64px;
+    --positionPolygonItem: 35px;
+    --positionYPolygon: 8px;
 
-    --spacePoligonItemMobile: 20px;
-    //
-
-    margin: calc(var(--heightPolygonItem) - var(--positionPolygonItem) + 24px) 0
-      calc(var(--heightPolygonItem) - var(--positionPolygonItem));
+    margin: calc(var(--widthPolygonItem) - var(--positionPolygonItem) + 24px) 0
+      calc(var(--widthPolygonItem) - var(--positionPolygonItem));
     // margin: 80px 0;
     position: relative;
 
     // check lại
     @include container-lg() {
-      --heightPolygon: 320px;
-      --heightPolygonItem: 82px;
-      --positionPolygonItem: 62px;
+      --widthPolygon: 260px;
+      --widthPolygonItem: 82px;
+      --positionYPolygon: 2px;
     }
     @include container-md() {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      --widthPolygonItem: 112px;
+      gap: 15px;
       width: 100%;
-      min-width: calc(var(--width) * var(--quantity));
-      --heightPolygonItem: 92px;
-      margin: 0;
     }
+
     &__item {
       position: absolute;
       display: flex;
@@ -327,34 +319,21 @@
       column-gap: 20px;
       z-index: 6;
       @include container-md() {
-        // position: unset;
-        width: var(--width);
-        animation: autoRun 20s linear infinite;
-        animation-delay: calc(
-          (20s / var(--quantity)) * (var(--position) - 1) - 20s
-        );
+        flex-direction: column;
+        align-items: center;
+        transform: unset !important;
+        row-gap: 20px;
       }
-      @keyframes autoRun {
-        from {
-          left: 100%;
-        }
-        to {
-          left: calc(var(--width) * -1);
-        }
+
+      @include container-md() {
+        position: unset;
       }
-      // @include container-lg() {
-      //   flex-direction: column;
-      //   align-items: normal;
-      // }
+
       &.orderContentLeft {
         // @include container-lg() {
         //   align-items: flex-end;
         // }
         order: 2;
-        @include container-md() {
-          order: unset;
-          align-items: center;
-        }
       }
       &.orderContentLeft .polygon--img {
         // @include container-lg() {
@@ -362,7 +341,7 @@
         // }
         order: 2;
         @include container-md() {
-          order: unset;
+          order: 1;
         }
       }
       &.orderContentLeft .polygon--info {
@@ -372,17 +351,21 @@
         order: 1;
         text-align: right;
         @include container-md() {
-          order: unset;
-          text-align: left;
+          order: 2;
         }
       }
       .polygon--img {
-        flex: 0 0 calc(var(--heightPolygonItem) - 14px);
-        width: calc(var(--heightPolygonItem) - 14px);
-        height: var(--heightPolygonItem);
-        // @include container-lg() {
-        //   flex: unset;
-        // }
+        flex: 0 0 calc(var(--widthPolygonItem) - 14px);
+        width: calc(var(--widthPolygonItem) - 14px);
+        // height: var(--widthPolygonItem);
+        @include aspect-ratio-pseudo(after, 115.5%);
+        transition: all 0.2s linear;
+        &:hover {
+          transform: scale(1.1);
+        }
+        @include container-md() {
+          flex: unset;
+        }
       }
 
       // info polygon item
@@ -391,16 +374,16 @@
         @include container-md() {
           min-width: unset;
           flex-grow: 1;
+          text-align: center !important;
         }
         &__title {
           font-size: 2.4rem;
           color: $primary-color;
           font-weight: 600;
+
           // line-height: 1.34;
           // @include clipText(2);
-          @include container-lg() {
-            font-size: 2rem;
-          }
+
           // height: calc(1em * 1.34 * 2);
         }
         &__content {
@@ -417,132 +400,46 @@
       &:nth-child(1) {
         left: 50%;
         bottom: calc(100% - var(--positionPolygonItem));
-        transform: translateX(calc((var(--heightPolygonItem) - 14px) / -2));
-        // @include container-lg() {
-        //   left: calc(50% + 8px);
-        //   transform: translateX(0);
-        // }
-        @include container-md() {
-          bottom: unset;
-          left: 100%;
-          transform: unset;
-        }
+        transform: translateX(calc((var(--widthPolygonItem) - 14px) / -2));
       }
       &:nth-child(2) {
         left: calc(100% - var(--positionPolygonItem));
-        top: calc(var(--positionPolygonItem) - 8px);
-        // @include container-lg() {
-        //   left: calc(50% + 8px);
-        //   top: calc(100% - var(--positionPolygonItem));
-        //   transform: translateX(0);
-        //   .polygon--img {
-        //     order: 2;
-        //   }
-        //   .polygon--info {
-        //     order: 1;
-        //   }
-        // }
-        @include container-md() {
-          top: unset;
-          left: 100%;
-        }
+        top: calc(var(--positionPolygonItem) - var(--positionYPolygon));
       }
       &:nth-child(3) {
         left: calc(100% - var(--positionPolygonItem));
-        bottom: calc(var(--positionPolygonItem) - 8px);
-        // @include container-lg() {
-        //   left: 50%;
-        //   // top: unset;
-        //   bottom: calc(100% - var(--positionPolygonItem));
-        //   transform: translate(
-        //     calc((var(--heightPolygonItem) - 14px) / -2),
-        //     -100%
-        //   );
-        //   .polygon--img {
-        //     order: 2;
-        //   }
-        //   .polygon--info {
-        //     order: 1;
-        //   }
-        // }
-        @include container-md() {
-          left: 100%;
-          bottom: unset;
-        }
+        bottom: calc(var(--positionPolygonItem) - var(--positionYPolygon));
       }
       &:nth-child(4) {
         right: 50%;
         top: calc(100% - var(--positionPolygonItem));
-        transform: translateX(calc((var(--heightPolygonItem) - 14px) / 2));
-        @include container-md() {
-          left: 100%;
-          top: unset;
-          right: unset;
-          transform: unset;
-        }
-        // @include container-lg() {
-        //   top: unset;
-        //   right: calc(50% + 8px);
-        //   bottom: calc(100% - var(--positionPolygonItem));
-        //   transform: translateX(0);
-        // }
+        transform: translateX(calc((var(--widthPolygonItem) - 14px) / 2));
       }
       &:nth-child(5) {
         right: calc(100% - var(--positionPolygonItem));
-        bottom: calc(var(--positionPolygonItem) - 8px);
-        @include container-md() {
-          left: 100%;
-          right: unset;
-          bottom: unset;
-        }
-        //
-        // @include container-lg() {
-        //   bottom: unset;
-        //   right: calc(50% + 8px);
-        //   top: calc(100% - var(--positionPolygonItem));
-        //   transform: translateX(0);
-        //   .polygon--img {
-        //     order: 2;
-        //   }
-        //   .polygon--info {
-        //     order: 1;
-        //   }
-        // }
+        bottom: calc(var(--positionPolygonItem) - var(--positionYPolygon));
       }
       &:nth-child(6) {
         right: calc(100% - var(--positionPolygonItem));
-        top: calc(var(--positionPolygonItem) - 8px);
-        @include container-md() {
-          left: 100%;
-          top: unset;
-          right: unset;
-        }
-        // @include container-lg() {
-        //   right: 50%;
-        //   top: calc(100% - var(--positionPolygonItem));
-        //   transform: translate(
-        //     calc((var(--heightPolygonItem) - 14px) / 2),
-        //     100%
-        //   );
-        // }
+        top: calc(var(--positionPolygonItem) - var(--positionYPolygon));
       }
     }
 
+    .polygon--blockMobile {
+      display: flex;
+      justify-content: center;
+      @include container-md() {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+    }
     .polygon {
       position: relative;
       @include flexCenter();
       @include polygon();
-      width: calc(var(--heightPolygon) - $widthPolygon);
-      height: var(--heightPolygon);
+      width: var(--widthPolygon);
       background: $primary-color;
-      @include container-md() {
-        display: none;
-      }
-      // @include container-lg() {
-      //   width: calc(var(--heightPolygon) - $widthPolygon - 30px);
-      //   height: calc(var(--heightPolygon) - 30px);
-      //   background: rgb(253 217 218);
-      // }
+      @include aspect-ratio-pseudo(after, 115.5%);
+
       &::before {
         content: "";
         position: absolute;
@@ -563,16 +460,20 @@
       }
 
       .polygon--bg {
+        position: absolute;
+        --reductionSpace: 145px;
+        @include container-md() {
+          --reductionSpace: 50px;
+        }
         @include flexCenter();
         @include polygon();
-        width: calc(var(--heightPolygon) - (172px + $widthPolygon));
-        height: calc(var(--heightPolygon) - 172px);
-        background: rgb(239, 239, 239);
-        // filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))
-        //   drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+        width: calc(var(--widthPolygon) - var(--reductionSpace));
+        @include aspect-ratio-pseudo(after, 115.5%);
+        filter: drop-shadow(4px 4px 24px rgba(0, 0, 0, 0.2));
         &__img {
-          width: calc(var(--heightPolygon) - (185px + $widthPolygon));
-          height: calc(var(--heightPolygon) - 185px);
+          width: calc(var(--widthPolygon) - var(--reductionSpace) - 10px);
+          position: absolute;
+          @include aspect-ratio-pseudo(after, 115.5%);
         }
       }
     }
@@ -636,7 +537,6 @@
       grid-template-columns: repeat(3, minmax(0px, 1fr));
       margin-top: 24px;
       column-gap: 20px;
-      padding: 0 55px;
       @include container-md() {
         grid-template-columns: repeat(2, minmax(0px, 1fr));
         &__item:first-child {
@@ -651,11 +551,7 @@
           &:hover img {
             transform: translate(-50%, -50%) scale(1.05);
           }
-          &::before {
-            content: "";
-            display: block;
-            padding-top: 56.25%;
-          }
+          @include aspect-ratio-pseudo(after, 56.25%);
           img {
             position: absolute;
             left: 50%;
@@ -676,18 +572,18 @@
             column-gap: 4px;
             &__icon {
               width: 14px;
-              height: 14%;
+              height: 14px;
               stroke: rgba(129, 129, 129, 1);
             }
             &__content {
               color: rgba(129, 129, 129, 1);
-              font-size: 1.2rem;
+              font-size: 12px;
             }
           }
           // name
           &__name {
             margin-top: 8px;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             line-height: 1.38;
             font-weight: 600;
             a {
@@ -695,10 +591,10 @@
               transition: all 0.2s linear;
               &:hover {
                 color: $primary-color;
-                font-size: 1.45rem;
+                font-size: 1.65rem;
                 text-decoration: underline;
               }
-              height: calc(1.45rem * 1.4 * 2);
+              height: calc(1.45rem * 1.65 * 2);
             }
           }
         }
@@ -709,12 +605,26 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        @include container-xl() {
+          top: 30%;
+          transform: unset;
+        }
       }
       .block--btn__next {
-        left: 0;
+        right: calc(100% + 20px);
+        @include container-xl() {
+          right: unset;
+          left: 0;
+          margin-left: 10px;
+        }
       }
       .block--btn__prev {
-        right: 0;
+        left: calc(100% + 20px);
+        @include container-xl() {
+          left: unset;
+          right: 0;
+          margin-right: 10px;
+        }
       }
       .news--next,
       .news--prev {
@@ -733,32 +643,53 @@
 // banner footer
 .section--bannerFooter {
   margin-top: 40px;
+
   .banner--footer {
     position: relative;
+    // padding: 50px;
+
     .banner--img {
+      position: relative;
+      overflow: hidden;
+      &::after {
+        content: "";
+        display: block;
+        padding-top: 42.86%;
+        @include container-md() {
+          padding-top: 56.25%;
+        }
+      }
       img {
-        max-width: 100%;
-        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: block;
       }
     }
-    .content--banner {
+    .container.custom--containerBannerFooter {
       position: absolute;
-      left: 10%;
+      left: 50%;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .content--banner {
       width: 50%;
       color: white;
+      @include container-lg() {
+        width: 100%;
+      }
 
       &__title {
         font-size: 2.8rem;
         font-weight: 600;
         @include clipText(2);
         @include container-md() {
-          font-size: 2rem;
-        }
-        @include container-sm() {
-          font-size: 1.6rem;
+          font-size: 2.4rem;
         }
       }
       &__mainContent {
@@ -768,11 +699,8 @@
         @include clipText(5);
         @include container-md() {
           font-size: 1.4rem;
-          @include clipText(2);
+          @include clipText(3);
           margin-top: 12px;
-        }
-        @include container-sm() {
-          font-size: 1.2rem;
         }
       }
       &__btn {

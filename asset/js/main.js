@@ -100,8 +100,10 @@ const listControlBanner = document.querySelector(".list--control");
 function renderTitleControlBanner() {
   const htmls = listBanner.map((el, i) => {
     return `
-      <li class="list--control__item" data-index=${i}>
-       <span> ${el.title}</span>
+      <li class="list--control__item ${
+        i === 0 ? "active" : ""
+      }" data-index=${i}>
+        ${el.title}
       </li>
       `;
   });
@@ -142,6 +144,11 @@ startInterVal();
 // handle Next and Prev banner
 function handlePrevNextBanner(i) {
   const listImgBanner = document.querySelectorAll(".list--banner__item");
+  const listControlBanner = document.querySelectorAll(".list--control__item");
+  const itemControl = document.querySelector(
+    `.list--control__item[data-index='${i}']`
+  );
+  console.log(itemControl);
   const currentElement = listImgBanner[i];
   // kéo el đang được active về
   const elImgPresent = document.querySelector(
@@ -164,6 +171,11 @@ function handlePrevNextBanner(i) {
   currentElement.dataset.active = 1;
   currentElement.style.visibility = "visible";
   currentElement.style.zIndex = elImgPresent.style.zIndex;
+
+  //
+  listControlBanner.forEach((el) => el.classList.remove("active"));
+  // add lại class
+  itemControl.classList.add("active");
 }
 
 // handle click dot banner

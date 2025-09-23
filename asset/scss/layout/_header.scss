@@ -4,10 +4,11 @@
   left: 0;
   width: 100%;
   z-index: 10;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
   .header__child {
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
     align-items: center;
-    justify-content: space-between;
     column-gap: 20px;
     padding: 12px 0;
     //
@@ -16,12 +17,12 @@
       align-items: center;
       column-gap: 20px;
       a img {
-        max-width: 160px;
-        height: auto;
+        width: auto;
+        height: 5.3rem;
       }
       .menu--bar {
         display: none;
-        @include container-xl() {
+        @include container-lg() {
           display: block;
         }
         svg {
@@ -31,11 +32,19 @@
         }
       }
     }
+    .nav--menu {
+      display: flex;
+      align-items: center;
+      column-gap: 28px;
+      justify-content: flex-end;
+    }
     .header--menu {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
       column-gap: 24px;
-      @include container-xl() {
+      @include container-lg() {
         display: none;
       }
       &__item {
