@@ -20,17 +20,6 @@
         width: auto;
         height: 5.3rem;
       }
-      .menu--bar {
-        display: none;
-        @include container-lg() {
-          display: block;
-        }
-        svg {
-          width: 24px;
-          height: 24px;
-          stroke: white;
-        }
-      }
     }
     .nav--menu {
       display: flex;
@@ -115,6 +104,23 @@
         svg {
           width: 16px;
           height: 16px;
+          stroke: white;
+        }
+      }
+      .menu--bar {
+        width: 32px;
+        height: 32px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: $primary-color;
+        border-radius: 2px;
+        @include container-lg() {
+          display: flex;
+        }
+        svg {
+          width: 24px;
+          height: 24px;
           stroke: white;
         }
       }

@@ -160,17 +160,22 @@ function handlePrevNextBanner(i) {
 
   // hạ img hiện tại if có
   if (elImgPresent) {
-    elImgPresent.style.opacity = 0;
+    elImgPresent.style.cssText = `
+    opacity: 0;
+    visibility: hidden;
+    z-index: ${zIndexElPrepareActive}
+    `;
     elImgPresent.dataset.active = 0;
-    elImgPresent.style.visibility = "hidden";
-    elImgPresent.style.zIndex = zIndexElPrepareActive;
   }
 
   // hiện img mới
-  currentElement.style.opacity = 1;
+  currentElement.style.cssText = `
+  opacity: 1;
+  visibility:visible;
+  z-index:${elImgPresent.style.zIndex}
+  `;
+
   currentElement.dataset.active = 1;
-  currentElement.style.visibility = "visible";
-  currentElement.style.zIndex = elImgPresent.style.zIndex;
 
   //
   listControlBanner.forEach((el) => el.classList.remove("active"));

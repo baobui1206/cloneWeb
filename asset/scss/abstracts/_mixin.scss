@@ -11,7 +11,15 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
+
+// test
+// @mixin justify-contentPrefix($properties) {
+//   justify-content: $properties;
+//   -webkit-box-pack: $properties;
+//   -ms-flex-pack: $properties;
+// }
 
 @mixin polygon {
   clip-path: polygon(50% 0%, 100% 24%, 100% 76%, 50% 100%, 0% 76%, 0 24%);

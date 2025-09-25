@@ -176,19 +176,6 @@ body {
   width: auto;
   height: 5.3rem;
 }
-.header .header__child .header--logo .menu--bar {
-  display: none;
-}
-@media screen and (max-width: 992px) {
-  .header .header__child .header--logo .menu--bar {
-    display: block;
-  }
-}
-.header .header__child .header--logo .menu--bar svg {
-  width: 24px;
-  height: 24px;
-  stroke: white;
-}
 .header .header__child .nav--menu {
   display: flex;
   align-items: center;
@@ -272,6 +259,25 @@ body {
   height: 16px;
   stroke: white;
 }
+.header .header__child .header--control .menu--bar {
+  width: 32px;
+  height: 32px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgb(128, 22, 24);
+  border-radius: 2px;
+}
+@media screen and (max-width: 992px) {
+  .header .header__child .header--control .menu--bar {
+    display: flex;
+  }
+}
+.header .header__child .header--control .menu--bar svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
 
 .banner .block--banner {
   position: relative;
@@ -351,6 +357,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 .banner .block--banner .list--banner__item .content--banner__seemore {
   --size-icon: 12px;
@@ -919,6 +926,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 @media screen and (max-width: 768px) {
   .introduce .info .content {
@@ -1048,6 +1056,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 @media screen and (max-width: 768px) {
   .application .list--application__items .block--contenBtn .content {
@@ -1056,6 +1065,7 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
     height: 2.72em;
   }
 }
@@ -1472,6 +1482,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
   transition: all 0.2s linear;
   height: 4.785rem;
 }
@@ -1577,6 +1588,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 @media screen and (max-width: 768px) {
   .section--bannerFooter .banner--footer .content--banner__title {
@@ -1592,6 +1604,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 @media screen and (max-width: 768px) {
   .section--bannerFooter .banner--footer .content--banner__mainContent {
@@ -1601,6 +1614,7 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
     margin-top: 12px;
   }
 }
