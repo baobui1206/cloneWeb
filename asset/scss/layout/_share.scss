@@ -12,9 +12,14 @@
 }
 .container {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1432px;
   margin: 0 auto;
   padding: 0 16px;
+
+  @include containerOrderBreakpoint(1550px) {
+    max-width: 1280px;
+  }
+  //
   @include container-xxl() {
     max-width: 1140px;
   }
@@ -37,10 +42,13 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 1320px;
+  width: 1432px;
   max-width: 100%;
   padding: 0 16px;
 
+  @include containerOrderBreakpoint(1550px) {
+    width: 1280px;
+  }
   @include container-xxl() {
     width: 1140px;
   }
@@ -67,8 +75,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   transform: rotate(45deg);
   border-radius: 4px;
   transition: background 0.2s linear;

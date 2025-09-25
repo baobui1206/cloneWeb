@@ -207,3 +207,22 @@ listControlBanner.onclick = (e) => {
 //   item.style.animation = `autoRun ${duration}s linear infinite`;
 //   item.style.animationDelay = `${delay}s`;
 // });
+
+// bắt add classactive header
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+  let scrollY = window.scrollY;
+  if (scrollY >= 200) {
+    header.classList.add("active--header");
+  } else {
+    if (header.classList.contains("active--header")) {
+      header.classList.remove("active--header");
+      header.classList.add("out--header");
+      header.addEventListener("animationend", () => {
+        header.classList.remove("out--header");
+      });
+      console.log("chào");
+    }
+  }
+});

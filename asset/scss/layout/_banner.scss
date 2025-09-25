@@ -66,7 +66,6 @@
           // position: absolute;
           color: white;
           width: 60%;
-
           font-weight: 700;
           @include container-lg() {
             width: 100%;
@@ -91,6 +90,9 @@
           &__content {
             margin-top: 12px;
             font-size: 2rem;
+            @include container-md() {
+              font-size: 14px;
+            }
             font-weight: 600;
             line-height: 1.4;
             @include clipText(3);
@@ -174,7 +176,7 @@
     // }
     //   list--control
     .container--banner.custom--containerListControl {
-      bottom: 80px;
+      bottom: 106px;
       @include container-lg() {
         bottom: 40px;
       }
@@ -194,7 +196,7 @@
         position: relative;
         height: max-content;
         display: block;
-        padding: 12px 0;
+        padding: 16px 0;
         font-size: 1.8rem;
         color: white;
         @include container-lg() {
