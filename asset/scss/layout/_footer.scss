@@ -2,7 +2,6 @@
   position: relative;
   background: $primary-color;
   padding: 40px 0;
-  margin-top: 40px;
   //   height: 500px;
   .iconBackgroundfooter {
     position: absolute;
@@ -32,7 +31,8 @@
     // left
     .endow__left {
       .endow__title {
-        font-size: 2.4rem;
+        font-size: 3.2rem;
+        font-weight: 700;
         color: white;
         @include container-md() {
           font-size: 2rem;
@@ -42,7 +42,7 @@
     // right
     .endow__right {
       .endow__content {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: white;
         line-height: 1.38;
       }
@@ -86,7 +86,7 @@
           height: 100%;
         }
         .title--contentFooter {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           font-weight: 600;
         }
         .title--contentFooter.mrTitleContent2 {
@@ -143,13 +143,14 @@
           margin-top: 24px;
           display: flex;
           flex-direction: column;
-          row-gap: 8px;
+          row-gap: 10px;
           &__item {
             a {
-              padding: 2px 0;
+              display: inline-block;
+              padding: 4px 0;
               color: white;
               border-bottom: 1px solid transparent;
-              font-size: 1.4rem;
+              font-size: 1.6rem;
               transition: all 0.2s linear;
               &:hover {
                 border-color: #b37475;

@@ -1,11 +1,11 @@
 html {
   font-size: 62.5%;
-  @include container-md() {
+  @include container-xxl() {
     font-size: 56.25%;
   }
-  // @include container-sm() {
-  //   font-size: 50%;
-  // }
+  @include container-xl() {
+    font-size: 50%;
+  }
 }
 
 body {

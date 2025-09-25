@@ -50,7 +50,7 @@
     }
     .content {
       margin-top: 40px;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       line-height: 1.4;
       @include clipText(5);
       @include container-md() {
@@ -76,7 +76,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0px, 1fr));
     gap: 20px;
-    margin-top: 24px;
+    margin-top: 3.2rem;
     @include container-lg() {
       grid-template-columns: repeat(2, minmax(0px, 1fr));
       &__items:nth-last-child(-n + 2) {
@@ -152,7 +152,7 @@
           display: block;
           width: 100%;
           text-align: center;
-          font-size: 1.6rem;
+          font-size: 2rem;
           text-transform: uppercase;
           font-weight: 600;
           line-height: 1.36;
@@ -185,7 +185,7 @@
           visibility: visible;
         }
         .content {
-          font-size: 14px;
+          font-size: 1.8rem;
           color: white;
           text-align: center;
           line-height: 1.36;
@@ -283,9 +283,7 @@
   }
 }
 
-.office--location {
-  margin-top: 40px;
-
+.section--officeLocation {
   .block--polygon {
     --widthPolygon: 300px;
     --widthPolygonItem: 102px;
@@ -293,8 +291,11 @@
     --positionPolygonItem: 35px;
     --positionYPolygon: 8px;
 
-    margin: calc(var(--widthPolygonItem) - var(--positionPolygonItem) + 24px) 0
+    margin: calc(var(--widthPolygonItem) - var(--positionPolygonItem) + 32px) 0
       calc(var(--widthPolygonItem) - var(--positionPolygonItem));
+    @include container-md() {
+      margin: 3.2rem 0 0;
+    }
     // margin: 80px 0;
     position: relative;
 
@@ -370,16 +371,16 @@
 
       // info polygon item
       .polygon--info {
-        min-width: 190px;
+        width: max-content;
         @include container-md() {
-          min-width: unset;
+          width: unset;
           flex-grow: 1;
           text-align: center !important;
         }
         &__title {
-          font-size: 2.4rem;
+          font-size: 2.8rem;
           color: $primary-color;
-          font-weight: 600;
+          font-weight: 700;
 
           // line-height: 1.34;
           // @include clipText(2);
@@ -389,7 +390,8 @@
         &__content {
           margin-top: 12px;
           line-height: 1.36;
-          font-size: 1.6rem;
+          font-size: 1.8rem;
+          @include clipText(2);
           // @include container-lg() {
           //   font-size: 1.4rem;
           // }
@@ -497,7 +499,6 @@
 
 // section facilities
 .section--facilities {
-  margin-top: 40px;
   .facilities {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -513,8 +514,9 @@
         text-align: left;
       }
       .facilities__content {
-        margin-top: 16px;
+        margin-top: 40px;
         line-height: 1.36;
+        font-size: 1.8rem;
       }
     }
     // img
@@ -529,13 +531,12 @@
 
 // section--news-=====
 .section--news {
-  margin-top: 40px;
   .news {
     .list--news {
       position: relative;
       display: grid;
       grid-template-columns: repeat(3, minmax(0px, 1fr));
-      margin-top: 24px;
+      margin-top: 3.2rem;
       column-gap: 20px;
       @include container-md() {
         grid-template-columns: repeat(2, minmax(0px, 1fr));
@@ -583,18 +584,18 @@
           // name
           &__name {
             margin-top: 8px;
-            font-size: 1.6rem;
+            font-size: 2rem;
             line-height: 1.38;
-            font-weight: 600;
+            font-weight: 700;
             a {
               @include clipText(2);
               transition: all 0.2s linear;
               &:hover {
                 color: $primary-color;
-                font-size: 1.65rem;
+                font-size: 2.05rem;
                 text-decoration: underline;
               }
-              height: calc(1.45rem * 1.65 * 2);
+              height: calc(2.05rem * 1.38 * 2);
             }
           }
         }
@@ -642,8 +643,6 @@
 
 // banner footer
 .section--bannerFooter {
-  margin-top: 40px;
-
   .banner--footer {
     position: relative;
     // padding: 50px;
@@ -685,7 +684,7 @@
       }
 
       &__title {
-        font-size: 2.8rem;
+        font-size: 4.8rem;
         font-weight: 600;
         @include clipText(2);
         @include container-md() {

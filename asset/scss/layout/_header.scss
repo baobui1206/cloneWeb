@@ -18,13 +18,16 @@
       column-gap: 20px;
       a img {
         width: auto;
-        height: 5.3rem;
+        height: 60px;
+        @include container-lg() {
+          height: 45px;
+        }
       }
     }
     .nav--menu {
       display: flex;
       align-items: center;
-      column-gap: 28px;
+      column-gap: 20px;
       justify-content: flex-end;
     }
     .header--menu {
@@ -32,7 +35,7 @@
       align-items: center;
       justify-content: space-between;
       flex-grow: 1;
-      column-gap: 24px;
+      column-gap: 16px;
       @include container-lg() {
         display: none;
       }
@@ -50,9 +53,9 @@
         a {
           position: relative;
           display: inline-block;
-          font-size: 1.4rem;
+          font-size: 1.8rem;
           white-space: nowrap;
-          font-weight: 500;
+          font-weight: 600;
           color: white;
           &::after {
             content: "";
@@ -82,6 +85,9 @@
       display: flex;
       align-items: center;
       column-gap: 24px;
+      @include container-lg() {
+        column-gap: 16px;
+      }
 
       //   padding-top: 12px;
       .control--languge {

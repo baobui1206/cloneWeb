@@ -66,22 +66,32 @@
           // position: absolute;
           color: white;
           width: 60%;
+
+          font-weight: 700;
           @include container-lg() {
             width: 100%;
           }
 
           &__top {
-            font-size: 12px;
+            font-size: 1.6rem;
             text-transform: uppercase;
             font-weight: 600;
           }
           &__title {
             margin-top: 12px;
+            font-size: 64px;
+            @include container-xxl() {
+              font-size: 4.8rem;
+            }
+
+            @include container-md() {
+              font-size: 3.4rem;
+            }
           }
           &__content {
             margin-top: 12px;
-            font-size: 1.6rem;
-            font-weight: 500;
+            font-size: 2rem;
+            font-weight: 600;
             line-height: 1.4;
             @include clipText(3);
           }
@@ -185,7 +195,7 @@
         height: max-content;
         display: block;
         padding: 12px 0;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: white;
         @include container-lg() {
           padding: 0;

@@ -52,7 +52,7 @@ function renderImgBanner() {
               <div class="content--banner">
                 <div>
                   <h2 class="content--banner__top">Tầm nhìn-sứ mệnh</h2>
-                  <p class="content--banner__title title--font28">
+                  <p class="content--banner__title">
                     ${el.title}
                   </p>
                   <p class="content--banner__content">
