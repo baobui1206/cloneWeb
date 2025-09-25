@@ -277,14 +277,11 @@
   left: 0;
   animation: animateOutHeader 0.3s linear;
   @keyframes animateOutHeader {
-    0% {
+    from {
       transform: translateY(0%);
     }
-    50% {
+    to {
       transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0%);
     }
   }
 }

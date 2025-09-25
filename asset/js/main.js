@@ -213,7 +213,7 @@ const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
   let scrollY = window.scrollY;
-  if (scrollY >= 200) {
+  if (scrollY >= 300) {
     header.classList.add("active--header");
   } else {
     if (header.classList.contains("active--header")) {

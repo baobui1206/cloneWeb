@@ -417,14 +417,11 @@ body {
   animation: animateOutHeader 0.3s linear;
 }
 @keyframes animateOutHeader {
-  0% {
+  from {
     transform: translateY(0%);
   }
-  50% {
+  to {
     transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
   }
 }
 
@@ -666,7 +663,7 @@ body {
   position: absolute;
   left: 0;
   top: 24px;
-  background-image: url("/asset/images/iconBackgroundFooter.png");
+  background-image: url("../images/iconBackgroundFooter.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 300px;
