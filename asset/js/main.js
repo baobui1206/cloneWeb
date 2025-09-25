@@ -222,7 +222,7 @@ window.addEventListener("scroll", () => {
       header.addEventListener("animationend", () => {
         header.classList.remove("out--header");
       });
-      console.log("chào");
+      // console.log("chào");
     }
   }
 });
