@@ -209,14 +209,14 @@ body {
   }
 }
 .header .header__child .header--menu__item:not(:first-child) a {
-  padding: 14px 0;
+  padding: 5px 0 14px;
 }
 .header .header__child .header--menu__item:not(:first-child) a::after {
   opacity: 0;
   visibility: hidden;
 }
 .header .header__child .header--menu__item:first-child a {
-  padding: 14px 0 8px;
+  padding: 3px 0 10px;
 }
 .header .header__child .header--menu__item a {
   position: relative;
@@ -254,6 +254,7 @@ body {
   display: flex;
   align-items: center;
   column-gap: 21px;
+  padding-bottom: 9px;
 }
 .header .header__child .header--menu .header--control .control--languge {
   display: flex;
@@ -1362,16 +1363,23 @@ body {
 }
 
 .section--officeLocation .block--polygon {
-  --widthPolygon: 300px;
-  --widthPolygonItem: 102px;
+  --widthPolygon: 480px;
+  --widthPolygonItem: 152px;
   --positionPolygonItem: 35px;
-  --positionYPolygon: 8px;
+  --positionYPolygon: -4px;
   margin: calc(var(--widthPolygonItem) - var(--positionPolygonItem) + 4rem) 0 calc(var(--widthPolygonItem) - var(--positionPolygonItem));
   position: relative;
 }
 @media screen and (max-width: 768px) {
   .section--officeLocation .block--polygon {
     margin: 32px 0 0;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .section--officeLocation .block--polygon {
+    --widthPolygon: 360px;
+    --widthPolygonItem: 122px;
+    --positionYPolygon: 6px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -1450,7 +1458,7 @@ body {
   }
 }
 .section--officeLocation .block--polygon__item .polygon--info {
-  width: max-content;
+  width: 200px;
 }
 @media screen and (max-width: 768px) {
   .section--officeLocation .block--polygon__item .polygon--info {
@@ -1460,14 +1468,25 @@ body {
   }
 }
 .section--officeLocation .block--polygon__item .polygon--info__title {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   color: rgb(128, 22, 24);
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+@media screen and (max-width: 768px) {
+  .section--officeLocation .block--polygon__item .polygon--info__title {
+    font-size: 22px;
+  }
 }
 .section--officeLocation .block--polygon__item .polygon--info__content {
   margin-top: 12px;
   line-height: 1.36;
-  font-size: 1.8rem;
+  font-size: 2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1475,6 +1494,11 @@ body {
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   height: 2.8em;
+}
+@media screen and (max-width: 768px) {
+  .section--officeLocation .block--polygon__item .polygon--info__content {
+    font-size: 14.4px;
+  }
 }
 .section--officeLocation .block--polygon__item:nth-child(1) {
   left: 50%;

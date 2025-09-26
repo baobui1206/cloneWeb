@@ -37,7 +37,6 @@
       justify-content: space-between;
       flex-grow: 1;
       column-gap: 16px;
-
       @include container-lg() {
         &__item:not(.header--control) {
           display: none;
@@ -46,14 +45,14 @@
       }
       &__item {
         &:not(:first-child) a {
-          padding: 14px 0;
+          padding: 5px 0 14px;
         }
         &:not(:first-child) a::after {
           opacity: 0;
           visibility: hidden;
         }
         &:first-child a {
-          padding: 14px 0 8px;
+          padding: 3px 0 10px;
         }
         a {
           position: relative;
@@ -94,10 +93,10 @@
         display: flex;
         align-items: center;
         column-gap: 21px;
+        padding-bottom: 9px;
         // @include container-lg() {
         //   column-gap: 16px;
         // }
-
         //   padding-top: 12px;
         .control--languge {
           display: flex;

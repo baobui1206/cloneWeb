@@ -291,11 +291,11 @@
 
 .section--officeLocation {
   .block--polygon {
-    --widthPolygon: 300px;
-    --widthPolygonItem: 102px;
+    --widthPolygon: 480px;
+    --widthPolygonItem: 152px;
     //
     --positionPolygonItem: 35px;
-    --positionYPolygon: 8px;
+    --positionYPolygon: -4px;
 
     margin: calc(var(--widthPolygonItem) - var(--positionPolygonItem) + 4rem) 0
       calc(var(--widthPolygonItem) - var(--positionPolygonItem));
@@ -305,7 +305,11 @@
     // margin: 80px 0;
     position: relative;
 
-    // check lại
+    @include container-xxl() {
+      --widthPolygon: 360px;
+      --widthPolygonItem: 122px;
+      --positionYPolygon: 6px;
+    }
     @include container-lg() {
       --widthPolygon: 260px;
       --widthPolygonItem: 82px;
@@ -377,26 +381,31 @@
 
       // info polygon item
       .polygon--info {
-        width: max-content;
+        width: 200px;
         @include container-md() {
           width: unset;
           flex-grow: 1;
           text-align: center !important;
         }
         &__title {
-          font-size: 2.8rem;
+          font-size: 3.2rem;
           color: $primary-color;
           font-weight: 700;
 
           // line-height: 1.34;
-          // @include clipText(2);
-
+          @include clipText(2);
+          @include container-md() {
+            font-size: 22px;
+          }
           // height: calc(1em * 1.34 * 2);
         }
         &__content {
           margin-top: 12px;
           line-height: 1.36;
-          font-size: 1.8rem;
+          font-size: 2rem;
+          @include container-md() {
+            font-size: 14.4px;
+          }
           @include clipText(2);
           // @include container-lg() {
           //   font-size: 1.4rem;
