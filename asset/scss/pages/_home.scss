@@ -381,7 +381,7 @@
 
       // info polygon item
       .polygon--info {
-        width: 200px;
+        width: max-content;
         @include container-md() {
           width: unset;
           flex-grow: 1;
