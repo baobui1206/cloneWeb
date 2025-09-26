@@ -306,9 +306,9 @@
     position: relative;
 
     @include container-xxl() {
-      --widthPolygon: 360px;
-      --widthPolygonItem: 122px;
-      --positionYPolygon: 6px;
+      --widthPolygon: 330px;
+      --widthPolygonItem: 102px;
+      --positionYPolygon: -6px;
     }
     @include container-lg() {
       --widthPolygon: 260px;

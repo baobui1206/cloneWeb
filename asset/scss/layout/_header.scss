@@ -20,6 +20,9 @@
       a img {
         width: auto;
         height: 74px;
+        @include container-xxl() {
+          height: 64px;
+        }
         @include container-lg() {
           height: 45px;
         }

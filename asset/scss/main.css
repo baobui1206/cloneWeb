@@ -182,6 +182,11 @@ body {
   width: auto;
   height: 74px;
 }
+@media screen and (max-width: 1400px) {
+  .header .header__child .header--logo a img {
+    height: 64px;
+  }
+}
 @media screen and (max-width: 992px) {
   .header .header__child .header--logo a img {
     height: 45px;
@@ -1051,6 +1056,11 @@ body {
 .mr--section {
   margin-top: 8rem;
 }
+@media screen and (max-width: 1400px) {
+  .mr--section {
+    margin-top: 7rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .mr--section {
     margin-top: 32px;
@@ -1377,9 +1387,9 @@ body {
 }
 @media screen and (max-width: 1400px) {
   .section--officeLocation .block--polygon {
-    --widthPolygon: 360px;
-    --widthPolygonItem: 122px;
-    --positionYPolygon: 6px;
+    --widthPolygon: 330px;
+    --widthPolygonItem: 102px;
+    --positionYPolygon: -6px;
   }
 }
 @media screen and (max-width: 992px) {

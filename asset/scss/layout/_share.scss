@@ -221,6 +221,9 @@
 
 .mr--section {
   margin-top: 8rem;
+  @include container-xxl() {
+    margin-top: 7rem;
+  }
   @include container-md() {
     margin-top: 32px;
   }
