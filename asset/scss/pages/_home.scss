@@ -543,6 +543,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 999;
       @include container-xl() {
         top: 30%;
         transform: unset;

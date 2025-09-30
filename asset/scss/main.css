@@ -1695,6 +1695,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 999;
 }
 @media screen and (max-width: 1200px) {
   .section--news .news .block--btn__next,
