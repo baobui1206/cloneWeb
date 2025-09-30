@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+
   @include container-xxl() {
     font-size: 56.25%;
   }
@@ -8,6 +9,9 @@ html {
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
 body {
   font-family: $primary-font;
   font-size: 1.6rem;

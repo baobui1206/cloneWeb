@@ -194,25 +194,18 @@ listControlBanner.onclick = (e) => {
   startInterVal();
 };
 
-// const itemsPolygon = document.querySelectorAll(".block--polygon__item");
-// const containerWidth = document.querySelector(".block--polygon").offsetWidth;
-// const duration = 10;
-// console.log(itemsPolygon);
-
-// itemsPolygon.forEach((item, index) => {
-//   const itemWidth = item.offsetWidth;
-//   const distance = containerWidth + itemWidth;
-//   const speed = distance / duration; // px/s
-//   const delay = (itemWidth / speed) * index;
-//   item.style.animation = `autoRun ${duration}s linear infinite`;
-//   item.style.animationDelay = `${delay}s`;
-// });
-
 // bắt add classactive header
 const header = document.getElementById("header");
+const btnBackToTop = document.getElementById("backtotop");
 
 window.addEventListener("scroll", () => {
   let scrollY = window.scrollY;
+  activeHeaderScroll(scrollY);
+  openAndHideBtnBackToTop(scrollY);
+});
+
+// add animation header
+function activeHeaderScroll(scrollY) {
   if (scrollY >= 300) {
     header.classList.add("active--header");
   } else {
@@ -222,12 +215,19 @@ window.addEventListener("scroll", () => {
       header.addEventListener("animationend", () => {
         header.classList.remove("out--header");
       });
-      // console.log("chào");
     }
   }
-});
+}
 
-//
+// ẩn hiện nút backtotop
+function openAndHideBtnBackToTop(scrollY) {
+  if (scrollY >= 300) {
+    btnBackToTop.classList.add("active");
+  } else {
+    btnBackToTop.classList.remove("active");
+  }
+}
+
 const hamburgerMobile = document.getElementById("hamburger");
 const modal = document.getElementById("modal");
 const headerMenu = document.getElementById("header--menu");
@@ -259,3 +259,12 @@ hamburgerMobile.onclick = () => {
 };
 
 modal.onclick = () => toggleModal();
+
+// back to top
+
+btnBackToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
