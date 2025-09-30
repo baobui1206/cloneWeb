@@ -239,6 +239,7 @@ function toggleModal() {
 // hamburgerMobile.addEventListener("click", () => toggleModal());
 hamburgerMobile.onclick = () => {
   headerMenu.classList.toggle("active--menuModile");
+  hamburgerMobile.classList.toggle("active");
 };
 
 modal.onclick = () => toggleModal();
