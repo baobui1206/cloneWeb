@@ -330,6 +330,7 @@
   top: 0;
   left: 0;
   animation: animateHeader 0.3s linear;
+  z-index: 9999;
   @keyframes animateHeader {
     from {
       transform: translateY(-100%);
@@ -345,6 +346,7 @@
   top: 0;
   left: 0;
   animation: animateOutHeader 0.3s linear;
+  z-index: 9999;
   @keyframes animateOutHeader {
     from {
       transform: translateY(0%);
