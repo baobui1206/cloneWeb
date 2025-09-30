@@ -231,12 +231,28 @@ window.addEventListener("scroll", () => {
 const hamburgerMobile = document.getElementById("hamburger");
 const modal = document.getElementById("modal");
 const headerMenu = document.getElementById("header--menu");
+const controlSearch = document.getElementById("control--search");
+const headerSearch = document.getElementById("header--search");
+const closeHeaderSearch = document.getElementById("header--search__close");
 
+// ẩn hiện box search
+function toggleHeaderSearch() {
+  headerSearch.classList.toggle("active");
+}
+
+controlSearch.onclick = () => toggleHeaderSearch();
+
+headerSearch.onclick = (e) => {
+  if (e.target === e.currentTarget) toggleHeaderSearch();
+};
+
+closeHeaderSearch.onclick = () => toggleHeaderSearch();
+
+// ẩn hiện modal
 function toggleModal() {
   modal.classList.toggle("active");
 }
 
-// hamburgerMobile.addEventListener("click", () => toggleModal());
 hamburgerMobile.onclick = () => {
   headerMenu.classList.toggle("active--menuModile");
   hamburgerMobile.classList.toggle("active");

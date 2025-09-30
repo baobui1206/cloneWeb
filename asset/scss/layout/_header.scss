@@ -354,3 +354,61 @@
     }
   }
 }
+
+// search
+.header--search {
+  position: relative;
+  @include flexCenter();
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s linear;
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: white;
+    @include flexCenter();
+    font-size: 24px;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .form--search {
+    display: flex;
+    align-items: center;
+    &__inp {
+      flex-grow: 1;
+      height: 40px;
+      border: none;
+      outline: none;
+      border-radius: 4px 0 0 4px;
+      padding: 0 20px;
+    }
+    &__submit {
+      width: 40px;
+      height: 40px;
+      border-radius: 0 4px 4px 0;
+      border: none;
+      border-left: 1px solid #ccc;
+      svg {
+        width: 16px;
+        height: 16px;
+        stroke: rgb(56, 56, 56);
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
