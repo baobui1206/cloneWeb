@@ -69,14 +69,20 @@
 .title--text {
   font-weight: 500;
 }
+.relative {
+  position: relative;
+}
+.space--block {
+  margin-top: clampVw(768px, 28px, 40px, 1920px);
+}
 
 // btn arrow
 .btn--arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   transform: rotate(45deg);
   border-radius: 4px;
   transition: background 0.2s linear;
@@ -144,10 +150,10 @@
 .blockBtn-conentArrow {
   display: flex;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 14px;
   span {
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: clampVw(768px, 14px, 16px, 1920px);
+    font-weight: 700;
     text-transform: uppercase;
   }
 }
@@ -177,11 +183,8 @@
   text-align: center;
 }
 .title--font48 {
-  font-size: 4.8rem;
+  font-size: clampVw(768px, 28px, 48px, 1920px);
   font-weight: 600;
-  @include container-lg() {
-    font-size: 3.2rem;
-  }
 }
 
 .side--toolbar {
@@ -202,8 +205,8 @@
     }
     a {
       @include flexCenter();
-      width: 40px;
-      height: 40px;
+      width: clampVw(768px, 35px, 40px, 1920px);
+      height: clampVw(768px, 35px, 40px, 1920px);
       border-radius: 4px;
     }
 
@@ -212,8 +215,9 @@
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: clampVw(768px, 18px, 20px, 1920px);
+      height: clampVw(768px, 18px, 20px, 1920px);
+
       stroke: white;
     }
   }
@@ -227,4 +231,21 @@
   @include container-md() {
     margin-top: 32px;
   }
+}
+
+// modal
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s linear;
+}
+
+// active
+.active {
+  opacity: 1 !important;
+  visibility: visible !important ;
 }

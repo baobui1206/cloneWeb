@@ -21,6 +21,8 @@
 //   -ms-flex-pack: $properties;
 // }
 
+// clamp Vw
+
 @mixin polygon {
   clip-path: polygon(50% 0%, 100% 24%, 100% 76%, 50% 100%, 0% 76%, 0 24%);
 }

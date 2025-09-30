@@ -226,3 +226,19 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+//
+const hamburgerMobile = document.getElementById("hamburger");
+const modal = document.getElementById("modal");
+const headerMenu = document.getElementById("header--menu");
+
+function toggleModal() {
+  modal.classList.toggle("active");
+}
+
+// hamburgerMobile.addEventListener("click", () => toggleModal());
+hamburgerMobile.onclick = () => {
+  headerMenu.classList.toggle("active--menuModile");
+};
+
+modal.onclick = () => toggleModal();

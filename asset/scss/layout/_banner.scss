@@ -78,21 +78,11 @@
           }
           &__title {
             margin-top: 12px;
-            font-size: 64px;
-            @include container-xxl() {
-              font-size: 4.8rem;
-            }
-
-            @include container-md() {
-              font-size: 3.4rem;
-            }
+            font-size: clampVw(768px, 32px, 64px, 1920px);
           }
           &__content {
             margin-top: 12px;
-            font-size: 2rem;
-            @include container-md() {
-              font-size: 14px;
-            }
+            font-size: clampVw(768px, 16px, 20px, 1920px);
             font-weight: 600;
             line-height: 1.4;
             @include clipText(3);

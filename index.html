@@ -13,6 +13,14 @@
       rel="stylesheet"
     />
 
+    <!-- swiper js  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
     <!-- css -->
     <link rel="stylesheet" href="./asset/scss/main.css" />
   </head>
@@ -29,7 +37,7 @@
           </div>
           <!-- menu -->
           <nav class="nav--menu">
-            <ul class="header--menu">
+            <ul id="header--menu" class="header--menu">
               <li class="header--menu__item">
                 <a href="#!"
                   ><svg
@@ -58,70 +66,71 @@
               </li>
               <li class="header--menu__item"><a href="#!">Tin tức</a></li>
               <li class="header--menu__item"><a href="#!">Liên hệ</a></li>
-              <li class="header--control">
-                <div class="control--languge">
-                  <span>Vn</span
-                  ><svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20.1929 8.71298C20.1361 8.57594 20.04 8.45881 19.9167 8.3764C19.7933 8.29399 19.6483 8.25 19.5 8.25H4.5C4.35167 8.25 4.20666 8.29399 4.08332 8.3764C3.95998 8.45881 3.86385 8.57595 3.80709 8.713C3.75032 8.85004 3.73547 9.00084 3.76441 9.14633C3.79336 9.29182 3.86479 9.42546 3.96968 9.53034L11.4697 17.0303C11.5393 17.1 11.622 17.1552 11.713 17.1929C11.804 17.2306 11.9015 17.25 12 17.25C12.0985 17.25 12.196 17.2306 12.287 17.1929C12.378 17.1552 12.4607 17.1 12.5303 17.0303L20.0303 9.53034C20.1352 9.42545 20.2066 9.29181 20.2356 9.14632C20.2645 9.00084 20.2497 8.85003 20.1929 8.71298Z"
-                    />
-                  </svg>
-                </div>
-                <div class="control--search">
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M14.5 14.5L10.5 10.5M6.5 12.5C3.18629 12.5 0.5 9.81371 0.5 6.5C0.5 3.18629 3.18629 0.5 6.5 0.5C9.81371 0.5 12.5 3.18629 12.5 6.5C12.5 9.81371 9.81371 12.5 6.5 12.5Z"
-                    />
-                  </svg>
-                </div>
-                <div class="menu--bar">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.75 12H20.25"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M3.75 6H20.25"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M3.75 18H20.25"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <!--  -->
-                  <div class="left"></div>
-                  <div class="top"></div>
-                  <div class="right"></div>
-                  <div class="bottom"></div>
-                </div>
-              </li>
             </ul>
+            <!-- header--control -->
+            <div class="header--control">
+              <div class="control--languge">
+                <span>Vn</span
+                ><svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.1929 8.71298C20.1361 8.57594 20.04 8.45881 19.9167 8.3764C19.7933 8.29399 19.6483 8.25 19.5 8.25H4.5C4.35167 8.25 4.20666 8.29399 4.08332 8.3764C3.95998 8.45881 3.86385 8.57595 3.80709 8.713C3.75032 8.85004 3.73547 9.00084 3.76441 9.14633C3.79336 9.29182 3.86479 9.42546 3.96968 9.53034L11.4697 17.0303C11.5393 17.1 11.622 17.1552 11.713 17.1929C11.804 17.2306 11.9015 17.25 12 17.25C12.0985 17.25 12.196 17.2306 12.287 17.1929C12.378 17.1552 12.4607 17.1 12.5303 17.0303L20.0303 9.53034C20.1352 9.42545 20.2066 9.29181 20.2356 9.14632C20.2645 9.00084 20.2497 8.85003 20.1929 8.71298Z"
+                  />
+                </svg>
+              </div>
+              <div class="control--search">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.5 14.5L10.5 10.5M6.5 12.5C3.18629 12.5 0.5 9.81371 0.5 6.5C0.5 3.18629 3.18629 0.5 6.5 0.5C9.81371 0.5 12.5 3.18629 12.5 6.5C12.5 9.81371 9.81371 12.5 6.5 12.5Z"
+                  />
+                </svg>
+              </div>
+              <div id="hamburger" class="hamburger">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 12H20.25"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.75 6H20.25"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.75 18H20.25"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <!--  -->
+                <div class="left"></div>
+                <div class="top"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+              </div>
+            </div>
           </nav>
           <!-- control -->
         </div>
@@ -276,6 +285,7 @@
       </div>
     </ul>
     <!-- main -->
+    <div id="modal"></div>
     <main class="main">
       <div class="container-fruid">
         <section class="introduce">
@@ -315,261 +325,321 @@
         <section class="application bg--section">
           <h2 class="title--font48 text--center">Ứng dụng</h2>
           <!--  -->
-          <ul class="list--application">
-            <li class="list--application__items">
-              <div class="application--img">
-                <img src="./asset/images/image-application.png" alt="" />
-              </div>
-              <!-- info -->
-
-              <div class="grid--content">
-                <div class="block--title">
-                  <span>Pin Lithium</span>
+          <div class="swiper swiper--application space--block">
+            <ul class="list--application swiper-wrapper">
+              <li class="list--application__items swiper-slide">
+                <div class="application--img">
+                  <img src="./asset/images/image-application.png" alt="" />
                 </div>
+                <!-- info -->
 
-                <div class="block--contenBtn">
-                  <p class="content">
-                    A Green building achieves more with less. It consumes less
-                    energy and wastes fewer resources, embodying a greater
-                    responsibility towards the environment. The philosophy of
-                    providing a comfortable and healthy
-                  </p>
-                  <div class="alignCenter mr--btnApplication">
-                    <div class="btn--arrow bdWhite btn--application">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
+                <div class="grid--content">
+                  <div class="block--title">
+                    <span>Pin Lithium</span>
+                  </div>
+
+                  <div class="block--contenBtn">
+                    <p class="content">
+                      A Green building achieves more with less. It consumes less
+                      energy and wastes fewer resources, embodying a greater
+                      responsibility towards the environment. The philosophy of
+                      providing a comfortable and healthy
+                    </p>
+                    <div class="alignCenter mr--btnApplication">
+                      <div class="btn--arrow bdWhite btn--application">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="list--application__items">
-              <div class="application--img">
-                <img src="./asset/images/image-application.png" alt="" />
-              </div>
-              <!-- info -->
-
-              <div class="grid--content">
-                <div class="block--title">
-                  <span>Pin Lithium</span>
+              </li>
+              <li class="list--application__items swiper-slide">
+                <div class="application--img">
+                  <img src="./asset/images/image-application.png" alt="" />
                 </div>
+                <!-- info -->
 
-                <div class="block--contenBtn">
-                  <p class="content">
-                    A Green building achieves more with less. It consumes less
-                    energy and wastes fewer resources, embodying a greater
-                    responsibility towards the environment. The philosophy of
-                    providing a comfortable and healthy
-                  </p>
-                  <div class="alignCenter mr--btnApplication">
-                    <div class="btn--arrow bdWhite btn--application">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
+                <div class="grid--content">
+                  <div class="block--title">
+                    <span>Pin Lithium</span>
+                  </div>
+
+                  <div class="block--contenBtn">
+                    <p class="content">
+                      A Green building achieves more with less. It consumes less
+                      energy and wastes fewer resources, embodying a greater
+                      responsibility towards the environment. The philosophy of
+                      providing a comfortable and healthy
+                    </p>
+                    <div class="alignCenter mr--btnApplication">
+                      <div class="btn--arrow bdWhite btn--application">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="list--application__items">
-              <div class="application--img">
-                <img src="./asset/images/image-application.png" alt="" />
-              </div>
-              <!-- info -->
-
-              <div class="grid--content">
-                <div class="block--title">
-                  <span>Pin Lithium</span>
+              </li>
+              <li class="list--application__items swiper-slide">
+                <div class="application--img">
+                  <img src="./asset/images/image-application.png" alt="" />
                 </div>
+                <!-- info -->
 
-                <div class="block--contenBtn">
-                  <p class="content">
-                    A Green building achieves more with less. It consumes less
-                    energy and wastes fewer resources, embodying a greater
-                    responsibility towards the environment. The philosophy of
-                    providing a comfortable and healthy
-                  </p>
-                  <div class="alignCenter mr--btnApplication">
-                    <div class="btn--arrow bdWhite btn--application">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
+                <div class="grid--content">
+                  <div class="block--title">
+                    <span>Pin Lithium</span>
+                  </div>
+
+                  <div class="block--contenBtn">
+                    <p class="content">
+                      A Green building achieves more with less. It consumes less
+                      energy and wastes fewer resources, embodying a greater
+                      responsibility towards the environment. The philosophy of
+                      providing a comfortable and healthy
+                    </p>
+                    <div class="alignCenter mr--btnApplication">
+                      <div class="btn--arrow bdWhite btn--application">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="list--application__items">
-              <div class="application--img">
-                <img src="./asset/images/image-application.png" alt="" />
-              </div>
-              <!-- info -->
-
-              <div class="grid--content">
-                <div class="block--title">
-                  <span>Pin Lithium</span>
+              </li>
+              <li class="list--application__items swiper-slide">
+                <div class="application--img">
+                  <img src="./asset/images/image-application.png" alt="" />
                 </div>
+                <!-- info -->
 
-                <div class="block--contenBtn">
-                  <p class="content">
-                    A Green building achieves more with less. It consumes less
-                    energy and wastes fewer resources, embodying a greater
-                    responsibility towards the environment. The philosophy of
-                    providing a comfortable and healthy
-                  </p>
-                  <div class="alignCenter mr--btnApplication">
-                    <div class="btn--arrow bdWhite btn--application">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
+                <div class="grid--content">
+                  <div class="block--title">
+                    <span>Pin Lithium</span>
+                  </div>
+
+                  <div class="block--contenBtn">
+                    <p class="content">
+                      A Green building achieves more with less. It consumes less
+                      energy and wastes fewer resources, embodying a greater
+                      responsibility towards the environment. The philosophy of
+                      providing a comfortable and healthy
+                    </p>
+                    <div class="alignCenter mr--btnApplication">
+                      <div class="btn--arrow bdWhite btn--application">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="list--application__items">
-              <div class="application--img">
-                <img src="./asset/images/image-application.png" alt="" />
-              </div>
-              <!-- info -->
-
-              <div class="grid--content">
-                <div class="block--title">
-                  <span>Pin Lithium</span>
+              </li>
+              <li class="list--application__items swiper-slide">
+                <div class="application--img">
+                  <img src="./asset/images/image-application.png" alt="" />
                 </div>
+                <!-- info -->
 
-                <div class="block--contenBtn">
-                  <p class="content">
-                    A Green building achieves more with less. It consumes less
-                    energy and wastes fewer resources, embodying a greater
-                    responsibility towards the environment. The philosophy of
-                    providing a comfortable and healthy
-                  </p>
-                  <div class="alignCenter mr--btnApplication">
-                    <div class="btn--arrow bdWhite btn--application">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
+                <div class="grid--content">
+                  <div class="block--title">
+                    <span>Pin Lithium</span>
+                  </div>
+
+                  <div class="block--contenBtn">
+                    <p class="content">
+                      A Green building achieves more with less. It consumes less
+                      energy and wastes fewer resources, embodying a greater
+                      responsibility towards the environment. The philosophy of
+                      providing a comfortable and healthy
+                    </p>
+                    <div class="alignCenter mr--btnApplication">
+                      <div class="btn--arrow bdWhite btn--application">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="list--application__items">
-              <div class="application--img">
-                <img src="./asset/images/image-application.png" alt="" />
-              </div>
-              <!-- info -->
-
-              <div class="grid--content">
-                <div class="block--title">
-                  <span>Pin Lithium</span>
+              </li>
+              <li class="list--application__items swiper-slide">
+                <div class="application--img">
+                  <img src="./asset/images/image-application.png" alt="" />
                 </div>
+                <!-- info -->
 
-                <div class="block--contenBtn">
-                  <p class="content">
-                    A Green building achieves more with less. It consumes less
-                    energy and wastes fewer resources, embodying a greater
-                    responsibility towards the environment. The philosophy of
-                    providing a comfortable and healthy
-                  </p>
-                  <div class="alignCenter mr--btnApplication">
-                    <div class="btn--arrow bdWhite btn--application">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
+                <div class="grid--content">
+                  <div class="block--title">
+                    <span>Pin Lithium</span>
+                  </div>
+
+                  <div class="block--contenBtn">
+                    <p class="content">
+                      A Green building achieves more with less. It consumes less
+                      energy and wastes fewer resources, embodying a greater
+                      responsibility towards the environment. The philosophy of
+                      providing a comfortable and healthy
+                    </p>
+                    <div class="alignCenter mr--btnApplication">
+                      <div class="btn--arrow bdWhite btn--application">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-          <!-- line slider -->
-          <div class="line--slider">
-            <div class="line--slider__line"></div>
+              </li>
+            </ul>
+            <!-- process -->
+            <div class="line--slider">
+              <div class="swiper--progressbar"></div>
 
-            <div class="slider__control">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M10 14L3 7.5L10 1" stroke-linecap="square" />
-              </svg>
-
-              <div class="animate--pointer">
+              <div class="slider__control">
                 <svg
-                  class="animate--pointer__pointer"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  class="swiper--application__btnPrev"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M11.9999 9.75V3.375C11.9999 2.87772 11.8023 2.40081 11.4507 2.04917C11.0991 1.69754 10.6221 1.5 10.1249 1.5C9.62759 1.5 9.15067 1.69754 8.79904 2.04917C8.44741 2.40081 8.24987 2.87772 8.24987 3.375V14.7437L6.19416 11.1831C6.07116 10.9697 5.9073 10.7825 5.71194 10.6324C5.51658 10.4823 5.29356 10.3722 5.05562 10.3083C4.81768 10.2445 4.56949 10.2281 4.32523 10.2602C4.08097 10.2923 3.84543 10.3723 3.63208 10.4955C3.41873 10.6186 3.23174 10.7827 3.0818 10.9781C2.93187 11.1736 2.82193 11.3967 2.75827 11.6347C2.6946 11.8727 2.67847 12.1209 2.71077 12.3652C2.74308 12.6094 2.82321 12.8449 2.94657 13.0581C5.99987 19.5 7.85773 21.75 11.9999 21.75C12.9848 21.75 13.9601 21.556 14.87 21.1791C15.7799 20.8022 16.6067 20.2497 17.3032 19.5533C17.9996 18.8569 18.5521 18.0301 18.929 17.1201C19.3059 16.2102 19.4999 15.2349 19.4999 14.25V10.5C19.4999 10.0027 19.3023 9.52581 18.9507 9.17417C18.5991 8.82254 18.1221 8.625 17.6249 8.625C17.1276 8.625 16.6507 8.82254 16.299 9.17417C15.9474 9.52581 15.7499 10.0027 15.7499 10.5"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M15.75 10.5V9.375C15.75 8.87772 15.5525 8.40081 15.2008 8.04917C14.8492 7.69754 14.3723 7.5 13.875 7.5C13.3777 7.5 12.9008 7.69754 12.5492 8.04917C12.1975 8.40081 12 8.87772 12 9.375V9.75"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                  <path d="M10 14L3 7.5L10 1" stroke-linecap="square" />
+                </svg>
+
+                <div class="animate--pointer">
+                  <svg
+                    class="animate--pointer__pointer"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.9999 9.75V3.375C11.9999 2.87772 11.8023 2.40081 11.4507 2.04917C11.0991 1.69754 10.6221 1.5 10.1249 1.5C9.62759 1.5 9.15067 1.69754 8.79904 2.04917C8.44741 2.40081 8.24987 2.87772 8.24987 3.375V14.7437L6.19416 11.1831C6.07116 10.9697 5.9073 10.7825 5.71194 10.6324C5.51658 10.4823 5.29356 10.3722 5.05562 10.3083C4.81768 10.2445 4.56949 10.2281 4.32523 10.2602C4.08097 10.2923 3.84543 10.3723 3.63208 10.4955C3.41873 10.6186 3.23174 10.7827 3.0818 10.9781C2.93187 11.1736 2.82193 11.3967 2.75827 11.6347C2.6946 11.8727 2.67847 12.1209 2.71077 12.3652C2.74308 12.6094 2.82321 12.8449 2.94657 13.0581C5.99987 19.5 7.85773 21.75 11.9999 21.75C12.9848 21.75 13.9601 21.556 14.87 21.1791C15.7799 20.8022 16.6067 20.2497 17.3032 19.5533C17.9996 18.8569 18.5521 18.0301 18.929 17.1201C19.3059 16.2102 19.4999 15.2349 19.4999 14.25V10.5C19.4999 10.0027 19.3023 9.52581 18.9507 9.17417C18.5991 8.82254 18.1221 8.625 17.6249 8.625C17.1276 8.625 16.6507 8.82254 16.299 9.17417C15.9474 9.52581 15.7499 10.0027 15.7499 10.5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15.75 10.5V9.375C15.75 8.87772 15.5525 8.40081 15.2008 8.04917C14.8492 7.69754 14.3723 7.5 13.875 7.5C13.3777 7.5 12.9008 7.69754 12.5492 8.04917C12.1975 8.40081 12 8.87772 12 9.375V9.75"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <svg
+                  class="swiper--application__btnNext"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
                 </svg>
               </div>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-              </svg>
             </div>
           </div>
+          <!-- swiper  -->
+          <script>
+            const swiperApplication = new Swiper(".swiper--application", {
+              slidesPerView: 1,
+              grid: {
+                rows: 2,
+                fill: "row",
+              },
+              breakpoints: {
+                0: {
+                  slidesPerView: 1,
+                  grid: {
+                    rows: 1,
+                    fill: "row",
+                  },
+                },
+                769: {
+                  slidesPerView: 2,
+                  grid: {
+                    rows: 2,
+                    fill: "row",
+                  },
+                },
+                993: {
+                  slidesPerView: 3,
+                  grid: {
+                    rows: 2,
+                    fill: "row",
+                  },
+                },
+              },
+
+              spaceBetween: 24,
+              pagination: {
+                el: ".swiper--progressbar",
+                type: "bullets",
+              },
+              navigation: {
+                nextEl: ".swiper--application__btnNext",
+                prevEl: ".swiper--application__btnPrev",
+              },
+              on: {
+                lock() {
+                  document.querySelector(".line--slider").style.display =
+                    "none";
+                },
+                unlock() {
+                  document.querySelector(".line--slider").style.display =
+                    "block";
+                },
+              },
+            });
+          </script>
+
+          <!-- line slider -->
+
           <!-- btn -->
           <div class="alignCenter mr--btnApplication">
             <div class="blockBtn-conentArrow btn__introduce">
@@ -715,7 +785,7 @@
                   Cơ sở vật chất <br />
                   (Văn phòng, Kho hàng)
                 </h2>
-                <p class="facilities__content">
+                <p class="facilities__content space--block">
                   Hệ thống văn phòng và kho bãi của Mercury được đặt tại các địa
                   điểm chiến lược, đảm bảo sự thuận lợi cho quá trình vận chuyển
                   và các hoạt động kinh doanh. Vị trí này không chỉ giúp tối ưu
@@ -744,116 +814,189 @@
             <div class="news">
               <h2 class="title--font48 text--center">Tin tức nổi bật</h2>
               <!-- list news -->
-
-              <div class="list--news">
-                <!-- control news -->
-                <article class="list--news__item">
-                  <!-- img -->
-                  <div class="news--thumnail">
-                    <a href="#!">
-                      <img src="./asset/images/news1.png" alt="" />
-                    </a>
+              <div class="relative space--block">
+                <div class="swiper swiper--news">
+                  <div class="list--news swiper-wrapper">
+                    <!-- control news -->
+                    <article class="list--news__item swiper-slide">
+                      <!-- img -->
+                      <div class="news--thumnail">
+                        <a href="#!">
+                          <img src="./asset/images/news1.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- info  -->
+                      <div class="news--info">
+                        <div class="news--time">
+                          <svg
+                            class="news--time__icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                          <span class="news--time__content">20.06.2024</span>
+                        </div>
+                        <h3 class="news--info__name">
+                          <a href="#!">
+                            Những xu hướng sẽ định hình công nghiệp hóa chất thế
+                            giới</a
+                          >
+                        </h3>
+                      </div>
+                    </article>
+                    <article class="list--news__item swiper-slide">
+                      <!-- img -->
+                      <div class="news--thumnail">
+                        <a href="#!">
+                          <img src="./asset/images/news1.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- info  -->
+                      <div class="news--info">
+                        <div class="news--time">
+                          <svg
+                            class="news--time__icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                          <span class="news--time__content">20.06.2024</span>
+                        </div>
+                        <h3 class="news--info__name">
+                          <a href="#!">
+                            Những xu hướng sẽ định hình công nghiệp hóa chất thế
+                            giới</a
+                          >
+                        </h3>
+                      </div>
+                    </article>
+                    <article class="list--news__item swiper-slide">
+                      <!-- img -->
+                      <div class="news--thumnail">
+                        <a href="#!">
+                          <img src="./asset/images/news1.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- info  -->
+                      <div class="news--info">
+                        <div class="news--time">
+                          <svg
+                            class="news--time__icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                          <span class="news--time__content">20.06.2024</span>
+                        </div>
+                        <h3 class="news--info__name">
+                          <a href="#!">
+                            Những xu hướng sẽ định hình công nghiệp hóa chất thế
+                            giới</a
+                          >
+                        </h3>
+                      </div>
+                    </article>
+                    <article class="list--news__item swiper-slide">
+                      <!-- img -->
+                      <div class="news--thumnail">
+                        <a href="#!">
+                          <img src="./asset/images/news1.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- info  -->
+                      <div class="news--info">
+                        <div class="news--time">
+                          <svg
+                            class="news--time__icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                          <span class="news--time__content">20.06.2024</span>
+                        </div>
+                        <h3 class="news--info__name">
+                          <a href="#!">
+                            Những xu hướng sẽ định hình công nghiệp hóa chất thế
+                            giới</a
+                          >
+                        </h3>
+                      </div>
+                    </article>
+                    <article class="list--news__item swiper-slide">
+                      <!-- img -->
+                      <div class="news--thumnail">
+                        <a href="#!">
+                          <img src="./asset/images/news1.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- info  -->
+                      <div class="news--info">
+                        <div class="news--time">
+                          <svg
+                            class="news--time__icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                            />
+                          </svg>
+                          <span class="news--time__content">20.06.2024</span>
+                        </div>
+                        <h3 class="news--info__name">
+                          <a href="#!">
+                            Những xu hướng sẽ định hình công nghiệp hóa chất thế
+                            giới</a
+                          >
+                        </h3>
+                      </div>
+                    </article>
                   </div>
-                  <!-- info  -->
-                  <div class="news--info">
-                    <div class="news--time">
-                      <svg
-                        class="news--time__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                        />
-                      </svg>
-                      <span class="news--time__content">20.06.2024</span>
-                    </div>
-                    <h3 class="news--info__name">
-                      <a href="#!">
-                        Những xu hướng sẽ định hình công nghiệp hóa chất thế
-                        giới</a
-                      >
-                    </h3>
-                  </div>
-                </article>
-                <article class="list--news__item">
-                  <!-- img -->
-                  <div class="news--thumnail">
-                    <a href="#!">
-                      <img src="./asset/images/news1.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- info  -->
-                  <div class="news--info">
-                    <div class="news--time">
-                      <svg
-                        class="news--time__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                        />
-                      </svg>
-                      <span class="news--time__content">20.06.2024</span>
-                    </div>
-                    <h3 class="news--info__name">
-                      <a href="#!">
-                        Những xu hướng sẽ định hình công nghiệp hóa chất thế
-                        giới</a
-                      >
-                    </h3>
-                  </div>
-                </article>
-                <article class="list--news__item">
-                  <!-- img -->
-                  <div class="news--thumnail">
-                    <a href="#!">
-                      <img src="./asset/images/news1.png" alt="" />
-                    </a>
-                  </div>
-                  <!-- info  -->
-                  <div class="news--info">
-                    <div class="news--time">
-                      <svg
-                        class="news--time__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                        />
-                      </svg>
-                      <span class="news--time__content">20.06.2024</span>
-                    </div>
-                    <h3 class="news--info__name">
-                      <a href="#!">
-                        Những xu hướng sẽ định hình công nghiệp hóa chất thế
-                        giới</a
-                      >
-                    </h3>
-                  </div>
-                </article>
-                <!-- btn controler news -->
-                <div class="block--btn__prev">
+                </div>
+                <!-- btn swiper  -->
+                <div class="block--btn__prev swiper--news__btnNext">
                   <div class="btn--arrow bgRgbBlack news--prev">
                     <svg
                       width="15"
@@ -866,7 +1009,7 @@
                     </svg>
                   </div>
                 </div>
-                <div class="block--btn__next">
+                <div class="block--btn__next swiper--news__btnPrev">
                   <div class="btn--arrow bgRgbBlack news--next">
                     <svg
                       width="15"
@@ -880,6 +1023,26 @@
                   </div>
                 </div>
               </div>
+              <!--  swiper news-->
+              <script>
+                const swiperNews = new Swiper(".swiper--news", {
+                  slidesPerView: 1,
+                  breakpoints: {
+                    769: {
+                      slidesPerView: 2,
+                    },
+                    1201: {
+                      slidesPerView: 3,
+                    },
+                  },
+                  spaceBetween: 24,
+                  navigation: {
+                    nextEl: ".swiper--news__btnNext",
+                    prevEl: ".swiper--news__btnPrev",
+                  },
+                });
+              </script>
+
               <div class="alignCenter mr--btnListNews">
                 <div class="blockBtn-conentArrow btn__introduce">
                   <span>Xem thêm</span>
@@ -902,43 +1065,41 @@
 
         <!-- section banner footer -->
         <section class="section--bannerFooter mr--section">
-          <div class="container-xl">
-            <div class="banner--footer">
-              <div class="banner--img">
-                <img src="./asset/images/banner--footer.png" alt="" />
-              </div>
-              <!-- content banner -->
-              <div class="container custom--containerBannerFooter">
-                <div class="content--banner">
-                  <h2 class="content--banner__title">
-                    Hóa học cho một thế giới tốt đẹp hơn
-                  </h2>
-                  <p class="content--banner__mainContent">
-                    Công ty TNHH Hóa Chất Mercury, với sứ mệnh "Hóa học cho một
-                    thế giới tốt đẹp hơn," không ngừng nỗ lực phát triển các
-                    giải pháp bền vững và thân thiện với môi trường. Chúng tôi,
-                    cùng với các đối tác toàn cầu, cam kết thực hiện các mục
-                    tiêu chính sau để thúc đẩy sự phát triển bền vững
-                  </p>
-                  <!--  -->
-                  <div class="blockBtn-conentArrow content--banner__btn">
-                    <span>Xem thêm</span>
-                    <div class="btn--arrow bdRed">
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
-                      </svg>
-                    </div>
+          <div class="banner--footer">
+            <div class="banner--img">
+              <img src="./asset/images/banner--footer.png" alt="" />
+            </div>
+            <!-- content banner -->
+            <div class="container custom--containerBannerFooter">
+              <div class="content--banner">
+                <h2 class="content--banner__title title--font48">
+                  Hóa học cho một thế giới tốt đẹp hơn
+                </h2>
+                <p class="content--banner__mainContent">
+                  Công ty TNHH Hóa Chất Mercury, với sứ mệnh "Hóa học cho một
+                  thế giới tốt đẹp hơn," không ngừng nỗ lực phát triển các giải
+                  pháp bền vững và thân thiện với môi trường. Chúng tôi, cùng
+                  với các đối tác toàn cầu, cam kết thực hiện các mục tiêu chính
+                  sau để thúc đẩy sự phát triển bền vững
+                </p>
+                <!--  -->
+                <div class="blockBtn-conentArrow content--banner__btn">
+                  <span>Xem thêm</span>
+                  <div class="btn--arrow bdRed">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M5 14L12 7.5L5 1" stroke-linecap="square" />
+                    </svg>
                   </div>
                 </div>
               </div>
-              <!--  -->
             </div>
+            <!--  -->
           </div>
         </section>
       </div>

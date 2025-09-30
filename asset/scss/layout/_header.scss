@@ -31,67 +31,109 @@
     .nav--menu {
       display: flex;
       align-items: center;
-      column-gap: 20px;
+      column-gap: clampVw(1200px, 20px, 32px, 1920px);
       justify-content: flex-end;
-    }
-    .header--menu {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-grow: 1;
-      column-gap: 16px;
-      @include container-lg() {
-        &__item:not(.header--control) {
-          display: none;
-        }
-        justify-content: flex-end;
-      }
-      &__item {
-        &:not(:first-child) a {
-          padding: 5px 0 14px;
-        }
-        &:not(:first-child) a::after {
+      // menu
+      .header--menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        column-gap: 16px;
+        @include container-xl() {
+          &__item:not(.header--control) {
+            // display: none;
+          }
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 16px);
+          top: calc(100% + 16px);
+          flex-direction: column;
+          align-items: start;
+          width: calc(100% - 32px);
+          padding: 16px;
+          background: $primary-color;
           opacity: 0;
           visibility: hidden;
+          transition: all 0.2s linear;
         }
-        &:first-child a {
-          padding: 3px 0 10px;
-        }
-        a {
-          position: relative;
-          display: inline-block;
-          font-size: 1.8rem;
-          @include container-xxl() {
-            font-size: 1.6rem;
-          }
-          white-space: nowrap;
-          font-weight: 600;
-          color: white;
-          &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
+        &__item {
+          @include container-xl() {
             width: 100%;
-            height: 2px;
-            background: white;
-            transition: all 0.2s linear;
           }
-          &:hover {
-            &::after {
-              opacity: 1;
-              visibility: visible;
+          &:not(:first-child) a {
+            padding: 5px 0 14px;
+          }
+          &:not(:first-child) a::after {
+            opacity: 0;
+            visibility: hidden;
+          }
+          &:first-child a {
+            padding: 3px 0 10px;
+            svg {
+              @include container-xl() {
+                display: none;
+              }
+            }
+            @include container-xl() {
+              &::before {
+                content: "Trang chủ";
+              }
             }
           }
-          svg {
-            width: 22px;
-            height: 22px;
-            stroke: white;
+          a {
+            position: relative;
+            display: inline-block;
+            font-size: 1.8rem;
+
+            @include container-xxl() {
+              font-size: 1.6rem;
+            }
+            @include container-xl() {
+              display: block;
+              padding: 8px 0 !important;
+              font-size: 20px;
+            }
+            white-space: nowrap;
+            font-weight: 600;
+            color: white;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: rgba(255, 255, 255, 1);
+              transition: all 0.2s linear;
+              @include container-xl() {
+                height: 1px;
+              }
+            }
+            &:hover {
+              &::after {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+            svg {
+              width: 22px;
+              height: 22px;
+              stroke: white;
+            }
           }
+        }
+      }
+      // active
+      @include container-xl() {
+        .active--menuModile {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, 0);
         }
       }
 
-      // header control
+      // control
       .header--control {
         display: flex;
         align-items: center;
@@ -124,7 +166,7 @@
             stroke: white;
           }
         }
-        .menu--bar {
+        .hamburger {
           --timeRun: 2s;
           --sizeLine: 1px;
           position: relative;
@@ -242,7 +284,7 @@
             }
           }
 
-          @include container-lg() {
+          @include container-xl() {
             display: flex;
           }
           svg {
